@@ -1,0 +1,682 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #17151b;
+    color: #f5f3f7;
+}
+
+
+/* =========================
+   ESTRUTURA DAS TELAS
+========================= */
+
+.tela {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+}
+
+
+/* =========================
+   PAINEL INFORMATIVO
+========================= */
+
+.info {
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 260px;
+    padding: 28px;
+
+    background: rgba(34, 30, 40, 0.94);
+    border: 1px solid #51445b;
+    border-left: 4px solid #9b7bb5;
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    z-index: 10;
+}
+
+.info-label {
+    display: block;
+
+    color: #9b7bb5;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.info h2 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.info p {
+    color: #aaa5af;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ELEMENTOS GERAIS
+========================= */
+
+.conteudo {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    margin-left: 230px;
+}
+
+h1 {
+    font-size: 45px;
+    line-height: 1.08;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+h1 strong {
+    color: #b9a0d0;
+    font-weight: 700;
+}
+
+.descricao {
+    max-width: 600px;
+    margin: 0 auto 40px;
+
+    color: #aaa5af;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 28px;
+    margin-top: 30px;
+
+    background: #9b7bb5;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.25s;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    background: #ad8ac8;
+}
+
+
+/* =========================
+   TELA 1
+========================= */
+
+#tela1 {
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            #3d3048 0%,
+            transparent 35%
+        ),
+        #17151b;
+}
+
+.fundo {
+    position: absolute;
+
+    right: 3%;
+
+    width: 500px;
+    height: 500px;
+
+    opacity: 0.18;
+
+    transform: rotate(-8deg);
+}
+
+.calendario {
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid #9b7bb5;
+    border-radius: 25px;
+
+    padding: 35px;
+}
+
+.calendario-topo {
+    font-size: 35px;
+    font-weight: bold;
+
+    margin-bottom: 35px;
+}
+
+.dias {
+    display: flex;
+    justify-content: space-between;
+
+    color: #9b7bb5;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.linhas {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 20px;
+}
+
+.linhas i {
+    height: 55px;
+
+    border: 1px solid #9b7bb5;
+
+    border-radius: 8px;
+}
+
+.popup {
+    width: 500px;
+
+    padding: 45px;
+
+    background: rgba(30, 27, 35, 0.96);
+
+    border: 1px solid #51435b;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+
+    z-index: 5;
+
+    transform: translateX(70px);
+}
+
+.popup h1 {
+    font-size: 42px;
+}
+
+.popup p {
+    color: #aaa5af;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   TELA 2
+========================= */
+
+#tela2 {
+    background: #1c1921;
+}
+
+.formulario {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+.formulario label {
+    display: block;
+
+    color: #d7d1dc;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+.formulario input,
+.formulario select {
+    width: 100%;
+
+    padding: 15px;
+
+    background: #28232d;
+
+    border: 1px solid #4c4252;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    border-color: #9b7bb5;
+}
+
+
+/* =========================
+   TELA 3
+========================= */
+
+#tela3 {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #392d43 0%,
+            transparent 30%
+        ),
+        #17151b;
+}
+
+.funcoes {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.card {
+    text-align: left;
+
+    padding: 25px;
+
+    background: #242029;
+
+    border: 1px solid #403746;
+
+    border-radius: 15px;
+
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    border-color: #806693;
+}
+
+.icone {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #392e42;
+
+    border-radius: 10px;
+
+    color: #b9a0d0;
+
+    font-size: 21px;
+
+    margin-bottom: 18px;
+}
+
+.card h2 {
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.card p {
+    color: #9e99a3;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TELA 4
+========================= */
+
+#tela4 {
+    background: #1c1921;
+}
+
+.permissoes {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.permissao {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-align: left;
+
+    padding: 25px;
+
+    margin-bottom: 15px;
+
+    background: #28232d;
+
+    border: 1px solid #403746;
+
+    border-radius: 15px;
+}
+
+.icone-grande {
+    min-width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #392e42;
+
+    border-radius: 12px;
+
+    color: #b9a0d0;
+
+    font-size: 23px;
+}
+
+.permissao h2 {
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+.permissao p {
+    color: #99949f;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.toggle {
+    width: 45px;
+    height: 25px;
+
+    background: #9b7bb5;
+
+    border-radius: 20px;
+
+    margin-left: auto;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+.toggle::after {
+    content: "";
+
+    width: 19px;
+    height: 19px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    right: 3px;
+    top: 3px;
+}
+
+.botoes-permissao {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.botao.secundario {
+    background: transparent;
+
+    border: 1px solid #51475a;
+
+    color: #aaa5af;
+}
+
+
+/* =========================
+   TELA 5
+========================= */
+
+#tela5 {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #3c3045 0%,
+            transparent 35%
+        ),
+        #17151b;
+}
+
+.final {
+    max-width: 700px;
+}
+
+.check {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: #9b7bb5;
+
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+.final h1 {
+    font-size: 55px;
+}
+
+.final > p {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    color: #aaa5af;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+.resumo {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.resumo div {
+    min-width: 160px;
+
+    padding: 18px;
+
+    background: #242029;
+
+    border: 1px solid #403746;
+
+    border-radius: 12px;
+}
+
+.resumo span {
+    display: block;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #8e8793;
+
+    margin-bottom: 8px;
+}
+
+.resumo strong {
+    font-size: 14px;
+}
+
+.resumo div:last-child strong {
+    color: #9bceaa;
+}
+
+.botao.principal {
+    padding: 17px 40px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .info {
+        left: 20px;
+        width: 220px;
+    }
+
+    .conteudo {
+        margin-left: 180px;
+    }
+
+    .popup {
+        transform: translateX(30px);
+    }
+
+    .fundo {
+        opacity: 0.08;
+        right: -10%;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .tela {
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    .info {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        width: 100%;
+        max-width: 500px;
+
+        margin-bottom: 30px;
+    }
+
+    .conteudo {
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .fundo {
+        display: none;
+    }
+
+    .popup {
+        width: 100%;
+        max-width: 500px;
+
+        transform: none;
+    }
+
+    .funcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo {
+        flex-direction: column;
+    }
+
+    .resumo div {
+        width: 100%;
+    }
+
+    .permissao {
+        align-items: flex-start;
+    }
+
+    .toggle {
+        display: none;
+    }
+}
